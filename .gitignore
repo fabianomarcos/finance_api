@@ -28,5 +28,6 @@ cypress.env.json
 
 debug.log
 debug
+dist
 
 annotations.tsx
