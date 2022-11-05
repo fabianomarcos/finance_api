@@ -1,0 +1,17 @@
+{
+	"tabWidth": 4,
+	"printWidth": 90,
+	"useTabs": true,
+	"semi": true,
+	"endOfLine": "lf",
+	"extends": [
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+		"prettier/prettier": "error"
+  }
+}
