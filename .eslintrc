@@ -44,8 +44,9 @@
 	},
 	"plugins": ["react", "typescript", "@typescript-eslint", "react-hooks", "prettier", "testing-library", "jest-dom", "eslint-plugin-import-helpers"],
 	"rules": {
+		"import/prefer-default-export": "off",
 		"camelcase": "off",
-		"import/no-unresolved": "error",
+		"import/no-unresolved": "warn",
 		"prettier/prettier": "error",
 		"testing-library/await-async-query": "warn",
 		"testing-library/no-await-sync-query": "warn",
@@ -71,9 +72,7 @@
 			{ "extensions": [".js", ".jsx", ".ts", ".tsx"] }
 		],
 		"react/jsx-props-no-spreading": 0,
-		// note you must disable the base rule as it can report incorrect errors
 		"no-use-before-define": "off",
-		"import/prefer-default-export": "off",
 		"jsx-a11y/no-static-element-interactions": "off",
 		"jsx-a11y/click-events-have-key-events": "off",
 		"no-mixed-spaces-and-tabs": "off",
@@ -93,7 +92,7 @@
 		"react/display-name": "off",
 		"import/order": "off",
 		"class-methods-use-this": "off",
-		"no-console": "off",
+		"no-console": "warn",
 		"no-useless-constructor": "off",
 		"no-empty-function": "off",
 		"lines-between-class-members": "off",

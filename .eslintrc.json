@@ -1,10 +1,12 @@
 {
     "env": {
-        "es2021": true,
-        "node": true
+        "browser": true,
+        "es2021": true
     },
     "extends": [
-        "airbnb-base"
+		"airbnb-base",
+        "prettier",
+		"plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -12,8 +14,10 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+		"prettier"
     ],
     "rules": {
+		"prettier/prettier": "error"
     }
 }
