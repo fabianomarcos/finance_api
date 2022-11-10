@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.9"
 
 services:
   database_finance:
@@ -13,13 +13,23 @@ services:
       - POSTGRES_DB=finance
     volumes:
       - pgdata:/data/postgres
+
+
   app:
     build: .
-    container_name: finance
+    container_name: project_finance
+    restart: always
     ports:
       - 3333:3333
+      - 9229:9229
     volumes:
       - .:/usr/app
+    links:
+      - database_finance
+    depends_on:
+      - database_finance
+
+
 
 volumes:
   pgdata:
