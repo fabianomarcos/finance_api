@@ -2,7 +2,7 @@ import { v4 as uuid } from "uuid";
 import { Entity, PrimaryColumn, Column, CreateDateColumn } from "typeorm";
 
 @Entity("users")
-class User {
+export class User {
 	@PrimaryColumn()
 	id?: string;
 
@@ -31,5 +31,3 @@ class User {
 		if (!this.id) this.id = uuid();
 	}
 }
-
-export { User };
