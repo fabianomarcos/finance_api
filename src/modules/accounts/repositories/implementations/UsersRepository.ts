@@ -10,10 +10,15 @@ export class UsersRepository implements IUsersRepository {
 	constructor() {
 		this.repository = getRepository(User);
 	}
-	async create({ name, username, email, drive_license, password }: ICreateUserDTO) {
+
+	async findByEmail(email: string): Promise<User | undefined> {
+		const user = await this.repository.findOne({ email });
+		return user;
+	}
+
+	async create({ name, email, drive_license, password }: ICreateUserDTO) {
 		const user = this.repository.create({
 			name,
-			username,
 			email,
 			drive_license,
 			password,
