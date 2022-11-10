@@ -1,16 +1,16 @@
 version: "3.9"
 
 services:
-  database_finance:
+  database:
     image: postgres
-    container_name: database_finance
+    container_name: db_finance
     restart: always
     ports:
       - 5432:5432
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=finance_senha
-      - POSTGRES_DB=finance
+      - POSTGRES_DB=database
     volumes:
       - pgdata:/data/postgres
 
@@ -25,9 +25,9 @@ services:
     volumes:
       - .:/usr/app
     links:
-      - database_finance
+      - database
     depends_on:
-      - database_finance
+      - database
 
 
 
