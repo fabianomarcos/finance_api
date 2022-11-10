@@ -11,4 +11,4 @@ interface ICategoriesRepository {
 	create({ name, description }: ICreateCategoryDTO): Promise<void>;
 }
 
-export type { ICategoriesRepository, ICreateCategoryDTO };
+export { ICategoriesRepository, ICreateCategoryDTO };
