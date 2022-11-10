@@ -23,8 +23,6 @@ class CategoriesRepository implements ICategoriesRepository {
 		Object.assign(category, { name, description, created_at: new Date() });
 
 		this.categories.push(category);
-
-		console.log(category);
 	}
 
 	list(): Category[] {
@@ -32,9 +30,9 @@ class CategoriesRepository implements ICategoriesRepository {
 	}
 
 	findByName(name: string): Category | undefined {
-		const category = this.categories.find((category) => category.name === name);
+		const category = this.categories.find((item) => item.name === name);
 		return category;
 	}
 }
 
-export { CategoriesRepository }
+export { CategoriesRepository };
