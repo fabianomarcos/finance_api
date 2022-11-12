@@ -4,6 +4,7 @@ export const deleteFile = async (filename: string): Promise<void> => {
 	try {
 		await fs.promises.stat(filename);
 	} catch (error) {
-		await fs.promises.unlink(filename);
+		return;
 	}
+	await fs.promises.unlink(filename);
 };
