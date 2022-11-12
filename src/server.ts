@@ -23,7 +23,7 @@ app.use((err: Error, _: Request, response: Response) => {
 
 	return response
 		.status(500)
-		.json({ message: `Internal server error - ${err.message}` });
+		.json({ status: "error", message: `Internal server error - ${err.message}` });
 });
 
 app.listen(3333, () => console.log("Server is running!"));
