@@ -17,13 +17,15 @@ app.use("/api-docs", swagger.serve, swagger.setup(swaggerFile));
 
 app.use(router);
 
+// eslint-disable-next-line consistent-return
 app.use((err: Error, _: Request, response: Response) => {
 	if (err instanceof AppError)
 		return response.status(err.statusCode).json({ message: err.message });
 
-	return response
-		.status(500)
-		.json({ message: `Internal server error - ${err.message}` });
+	if (response)
+		return response
+			.status(500)
+			.json({ message: `Internal server error - ${err.message}` });
 });
 
 app.listen(3333, () => console.log("Server is running!"));
