@@ -1,24 +1,24 @@
 {
-  "compilerOptions": {
-    "target": "es2016",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "module": "commonjs",
-    "baseUrl": "src",
-    "paths": {
-		"modules/*": ["modules/*"],
-		"database/*": ["database/*"],
-		"errors/*": ["errors/*"],
-		"config/*": ["config/*"],
-		"shared/*": ["shared/*"],
-		"utils/*": ["utils/*"],
-		"routes/*": ["routes/*"]
-	},
-    "resolveJsonModule": true,
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-	"strict": true,
-    "skipLibCheck": true
-  }
+	"compilerOptions": {
+	  "target": "es2016",
+	  "experimentalDecorators": true,
+	  "emitDecoratorMetadata": true,
+	  "module": "commonjs",
+	  "baseUrl": "src",
+	  "paths": {
+		  "modules/*": ["modules/*"],
+		  "database/*": ["database/*"],
+		  "errors/*": ["errors/*"],
+		  "config/*": ["config/*"],
+		  "shared/*": ["shared/*"],
+		  "utils/*": ["utils/*"],
+		  "routes/*": ["routes/*"]
+	  },
+	  "resolveJsonModule": true,
+	  "outDir": "./dist",
+	  "esModuleInterop": true,
+	  "forceConsistentCasingInFileNames": true,
+	  "strict": true,
+	  "skipLibCheck": true
+	}
 }
