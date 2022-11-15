@@ -5,10 +5,5 @@
 		"no-misused-new": false,
 		"indent": [true, "tabs", 4],
 		"no-console": false
-	},
-	"linterOptions": {
-		"exclude": [
-			"src/utils/stubber/stubs/**/*"
-		]
 	}
  }

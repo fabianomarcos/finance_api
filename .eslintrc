@@ -1,124 +1,64 @@
 {
-	"settings": {
-		"react": {
-			"version": "detect"
-		},
-		"import/resolver": {
-			"typescript": {},
-			"node": {
-				"extensions": [".js", ".jsx", ".ts", ".tsx",".d.ts"],
-				"paths": ["src"]
-			}
-		}
-	},
-	"env": {
-		"es2020": true,
-		"browser": true,
-		"es6": true,
-		"node": true,
+    "env": {
+        "browser": true,
+        "es2021": true,
 		"jest": true
-	},
-	"extends": [
-		"airbnb",
-		"prettier",
-		"prettier/react",
-		"eslint:recommended",
-		"plugin:testing-library/react",
-		"plugin:react/recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:react-hooks/recommended"
-	],
-	"globals": {
-		"Atomics": "readonly",
-		"SharedArrayBuffer": "readonly"
-	},
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true,
-			"modules": true
-		},
-		"ecmaVersion": 2018,
-		"sourceType": "module"
-	},
-	"plugins": ["react", "typescript", "@typescript-eslint", "react-hooks", "prettier", "testing-library", "jest-dom", "eslint-plugin-import-helpers"],
-	"rules": {
-		"import/prefer-default-export": "off",
+    },
+    "extends": [
+        "airbnb-base",
+        "prettier",
+		"plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "plugins": [
+        "@typescript-eslint",
+		"prettier"
+    ],
+    "rules": {
 		"camelcase": "off",
-		"import/no-unresolved": "warn",
-		"prettier/prettier": "error",
-		"testing-library/await-async-query": "warn",
-		"testing-library/no-await-sync-query": "warn",
-		"testing-library/no-debug": "warn",
-		"testing-library/no-dom-import": "off",
-		"jest-dom/prefer-checked": "warn",
-		"jest-dom/prefer-enabled-disabled": "warn",
-		"jest-dom/prefer-required": "warn",
-		"jest-dom/prefer-to-have-attribute": "warn",
-		"import/extensions": [
+		"import/no-unresolved": [
+			"off",
+			{ "caseSensitive": false }
+		],
+		"@typescript-eslint/naming-convention": [
 			"error",
-			"ignorePackages",
 			{
-				"js": "never",
-				"jsx": "never",
-				"ts": "never",
-				"tsx": "never",
-				"json": "never"
+				"selector": "interface",
+				"format": ["PascalCase"],
+				"custom": {
+					"regex": "^I[A-Z]",
+					"match": true
+				}
 			}
 		],
-		"react/jsx-filename-extension": [
-			1,
-			{ "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-		],
-		"react/jsx-props-no-spreading": 0,
-		"no-use-before-define": "off",
-		"jsx-a11y/no-static-element-interactions": "off",
-		"jsx-a11y/click-events-have-key-events": "off",
-		"no-mixed-spaces-and-tabs": "off",
-		" @typescript-eslint/no-empty-function": "off",
-		"@typescript-eslint/no-use-before-define": ["error"],
-		"@typescript-eslint/explicit-module-boundary-types": "off",
-		"react/require-default-props": "off",
-		"eslint-disable consistent-return": "off",
-		"linebreak-style": "off",
-		"@typescript-eslint/linebreak-style": "off",
-		"react/destructuring-assignment": "off",
-		"no-plusplus": "off",
-		"max-len": [1, { "code": 120, "tabWidth": 4 }],
-		"no-shadow": "off",
-		"no-underscore-dangle": "off",
-		"react/prop-types": "off",
-		"react/display-name": "off",
-		"import/order": "off",
 		"class-methods-use-this": "off",
-		"no-console": "warn",
+		"import/prefer-default-export": "off",
+		"no-shadow": "off",
+		"no-console": "off",
 		"no-useless-constructor": "off",
 		"no-empty-function": "off",
 		"lines-between-class-members": "off",
+		"import/extensions": [
+			"off",
+			"ignorePackages",
+			{
+				"ts": "never"
+			}
+		],
 		"import-helpers/order-imports": [
-			"warn",
+			"off",
 			{
 				"newlinesBetween": "always",
 				"groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
 				"alphabetize": { "order": "asc", "ignoreCase": true }
 			}
-			],
-			"import/no-extraneous-dependencies": [
-				"error",
-				{ "devDependencies": ["**/*.spec.js"] }
 		],
-		"@typescript-eslint/naming-convention": [
+		"import/no-extraneous-dependencies": [
 			"error",
-			{
-			  "selector": "interface",
-			  "format": ["PascalCase"],
-			  "custom": {
-				"regex": "^I[A-Z]",
-				"match": true
-			  }
-			}
-		  ]
-	},
-	"ignorePatterns": ["build/**/*", "src/utils/stubber/stubs/**/*"]
+			{ "devDependencies": ["**/*.spec.js"] }
+		]
+    }
 }
